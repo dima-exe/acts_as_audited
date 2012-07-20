@@ -25,6 +25,8 @@ class Audit < ActiveRecord::Base
   default_scope order(:version)
   scope :descending, reorder("version DESC")
 
+  attr_accessible :action, :audited_changes, :comment, :associated
+
   class << self
 
     # Returns the list of classes that are being audited

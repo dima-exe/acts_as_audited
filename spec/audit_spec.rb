@@ -187,4 +187,9 @@ describe Audit do
 
   end
 
+  describe "mass assignment" do
+    it "should accept :action, :audited_changes, :associated and :comment attributes" do
+      Audit.accessible_attributes.should include(:action, :audited_changes, :comment, :associated)
+    end
+  end
 end
